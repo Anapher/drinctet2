@@ -7,7 +7,7 @@ import { AppDispatch } from '../../../app/store';
 import createNextSlideState from '../../../services/game-maker/createNextSlideState';
 import { getSlideFactory } from '../../../services/game-maker/getSlideFactory';
 import { Game, GameCard, GameContext } from '../../../types';
-import ScrollContainer from '../../components/ScrollContainer';
+import ScrollContainer from '../../../components/ScrollContainer';
 import useCardsFromDecks from '../hooks/useCardsFromDecks';
 import { selectGame } from '../selectors';
 import { appendToStack, setIndex } from '../slice';

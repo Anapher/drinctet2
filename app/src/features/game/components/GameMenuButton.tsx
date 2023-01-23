@@ -1,8 +1,10 @@
 import { MoreVert } from '@mui/icons-material';
-import { IconButton, Menu, MenuItem } from '@mui/material';
+import { IconButton, ListItemIcon, ListItemText, Menu, MenuItem } from '@mui/material';
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import SettingsIcon from '@mui/icons-material/Settings';
 
 function GameMenuButton() {
    const { t } = useTranslation();
@@ -19,6 +21,11 @@ function GameMenuButton() {
 
    const handleGoBack = () => {
       navigate('/');
+      handleClose();
+   };
+
+   const handleGoToSettings = () => {
+      navigate('/game/settings');
       handleClose();
    };
 
@@ -43,7 +50,18 @@ function GameMenuButton() {
                'aria-labelledby': 'game-open-menu-button',
             }}
          >
-            <MenuItem onClick={handleGoBack}>{t('game.menu.go_back')}</MenuItem>
+            <MenuItem onClick={handleGoBack}>
+               <ListItemIcon>
+                  <ArrowBackIcon />
+               </ListItemIcon>
+               <ListItemText>{t('game.menu.go_back')}</ListItemText>
+            </MenuItem>
+            <MenuItem onClick={handleGoToSettings}>
+               <ListItemIcon>
+                  <SettingsIcon />
+               </ListItemIcon>
+               <ListItemText>{t('settings.label')}</ListItemText>
+            </MenuItem>
          </Menu>
       </>
    );

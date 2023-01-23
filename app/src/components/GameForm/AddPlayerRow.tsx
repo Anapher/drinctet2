@@ -1,5 +1,5 @@
 import { IconButton, InputAdornment, TextField, TextFieldProps } from '@mui/material';
-import { Gender } from '../../../types';
+import { Gender } from '../../types';
 import MaleIcon from '@mui/icons-material/Male';
 import FemaleIcon from '@mui/icons-material/Female';
 import DeleteIcon from '@mui/icons-material/Delete';

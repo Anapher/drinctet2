@@ -14,5 +14,10 @@
       },
       "sip_one": "one sip",
       "sip_other": "{{count}} sips"
-   }
+   },
+   "settings": {
+      "label": "Settings"
+   },
+   "cancel": "Cancel",
+   "save": "Save"
 }

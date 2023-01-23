@@ -1,17 +1,12 @@
 import styled from '@emotion/styled';
 import { Chip, Typography } from '@mui/material';
-import { Box, Container } from '@mui/system';
+import { Box } from '@mui/system';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import ContentContainer from '../../../components/ContentContainer';
 import { selectIsGameActive } from '../../game/selectors';
 import { deleteGame } from '../../game/slice';
-
-const StyledContainer = styled(Container)({
-   flex: 1,
-   display: 'flex',
-   flexDirection: 'column',
-});
 
 type Props = {
    children?: React.ReactNode;
@@ -33,7 +28,7 @@ function HeaderLayout({ children }: Props) {
    };
 
    return (
-      <StyledContainer maxWidth="md">
+      <ContentContainer>
          <Box display="flex" justifyContent="space-between" alignItems="center" flexDirection="row" sx={{ my: 2 }}>
             <Box flex={1} />
             <Typography align="center" fontWeight="bold">
@@ -53,7 +48,7 @@ function HeaderLayout({ children }: Props) {
             </Box>
          </Box>
          {children}
-      </StyledContainer>
+      </ContentContainer>
    );
 }
 

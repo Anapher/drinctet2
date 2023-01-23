@@ -1,62 +1,31 @@
-import { Button, Divider, IconButton, List, ListItem, ListItemText, ListSubheader, Stack } from '@mui/material';
-import { Control, useFieldArray, useForm } from 'react-hook-form';
-import { Game, GameConfig, GameConfigSchema, Player } from '../../../types';
 import AddIcon from '@mui/icons-material/Add';
-import AddPlayerRow from './AddPlayerRow';
-import { useTranslation } from 'react-i18next';
+import { Divider, IconButton, List, ListItem, ListItemButton, ListItemText, ListSubheader, Stack } from '@mui/material';
 import cuid from 'cuid';
 import { KeyboardEvent, useState } from 'react';
-import * as z from 'zod';
-import { zodResolver } from '@hookform/resolvers/zod';
-import createNewGame from '../../../services/game-maker/createNewGame';
-import globalConfig from '../../../global-config';
-
-const removeEmptyPlayers: (config: GameConfig) => GameConfig = (config) => ({
-   ...config,
-   players: config?.players?.filter((x) => !!x.name),
-});
-const ignoreEmptyPlayersSchema = z.preprocess(removeEmptyPlayers as any, GameConfigSchema);
+import { Control, useFieldArray, UseFormReturn } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
+import { GameConfig, Player } from '../../types';
+import AddPlayerRow from './AddPlayerRow';
 
 type GameFormProps = {
-   onCreateGame: (game: Game) => void;
+   form: UseFormReturn<GameConfig>;
 };
 
-function GameForm({ onCreateGame }: GameFormProps) {
-   const { t } = useTranslation();
-
-   const {
-      handleSubmit,
-      control,
-      formState: { isValid },
-   } = useForm<GameConfig>({
-      resolver: zodResolver(ignoreEmptyPlayersSchema),
-      defaultValues: { cardDeckIds: ['nice'], slideTypeWeights: globalConfig.defaultSlideWeights },
-      mode: 'onChange',
-   });
-
-   const onSubmit = (config: GameConfig) => {
-      const game = createNewGame({ ...config });
-      onCreateGame(game);
-   };
-
+function GameForm({ form: { control } }: GameFormProps) {
    return (
-      <form
-         onSubmit={handleSubmit(onSubmit)}
-         style={{ flex: 1, display: 'flex', flexDirection: 'column', minHeight: 0 }}
-      >
-         <List style={{ flex: 1, overflowY: 'auto', minHeight: 0 }} disablePadding>
-            <ListItem button divider>
+      <List style={{ flex: 1, overflowY: 'auto', minHeight: 0 }} disablePadding>
+         <ListItem divider disablePadding>
+            <ListItemButton>
                <ListItemText primary="Card decks" secondary={'Not supported at the moment'} />
-            </ListItem>
-            <PlayerList control={control} />
-            <ListItem button divider>
+            </ListItemButton>
+         </ListItem>
+         <PlayerList control={control} />
+         <ListItem divider disablePadding>
+            <ListItemButton>
                <ListItemText primary="Advanced Config" />
-            </ListItem>
-         </List>
-         <Button variant="contained" style={{ margin: 8, marginTop: 16 }} type="submit" disabled={!isValid}>
-            {t('play.lets_play')}
-         </Button>
-      </form>
+            </ListItemButton>
+         </ListItem>
+      </List>
    );
 }
 
