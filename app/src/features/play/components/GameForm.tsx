@@ -30,7 +30,7 @@ function GameForm({ onCreateGame }: GameFormProps) {
       formState: { isValid },
    } = useForm<GameConfig>({
       resolver: zodResolver(ignoreEmptyPlayersSchema),
-      defaultValues: { cardDeckIds: [12, 1], slideTypeWeights: globalConfig.defaultSlideWeights },
+      defaultValues: { cardDeckIds: ['default'], slideTypeWeights: globalConfig.defaultSlideWeights },
       mode: 'onChange',
    });
 

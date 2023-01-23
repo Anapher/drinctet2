@@ -1,0 +1,14 @@
+[
+    {
+        "type": "category",
+        "category": {
+            "en": "Car brands"
+        }
+    },
+    {
+        "type": "dare",
+        "dare": {
+            "en": "Do this"
+        }
+    }
+]

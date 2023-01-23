@@ -78,15 +78,18 @@ export const realTimeGuessingCardSchema = z.object({
 });
 export type RealTimeGuessingCard = z.infer<typeof realTimeGuessingCardSchema>;
 
-export type GameCardData =
-   | CategoryCard
-   | NeverHaveIEverCard
-   | TruthCard
-   | DareCard
-   | ThisOrThatCard
-   | MostLikelyCard
-   | ActivityCard
-   | ChineseWhisperCard
-   | MiniGameCard
-   | FactCard
-   | RealTimeGuessingCard;
+export const gameCardSchema = z.discriminatedUnion('type', [
+   categoryCardSchema,
+   neverHaveIEverCardSchema,
+   truthCardSchema,
+   dareCardSchema,
+   thisOrThatCardSchema,
+   mostLikelyCardSchema,
+   activityCardSchema,
+   chineseWhisperCardSchema,
+   miniGameCardSchema,
+   factCardSchema,
+   realTimeGuessingCardSchema,
+]);
+
+export type GameCardData = z.infer<typeof gameCardSchema>;

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Game } from '../../../types';
 import { loadGame } from '../../game/slice';
 import GameForm from './GameForm';
+import HeaderLayout from './HeaderLayout';
 
 export default function PlayRoute() {
    const dispatch = useDispatch();
@@ -15,8 +16,10 @@ export default function PlayRoute() {
    };
 
    return (
-      <Container maxWidth="md">
-         <GameForm onCreateGame={handleCreateGame} />
-      </Container>
+      <HeaderLayout>
+         <Container maxWidth="md">
+            <GameForm onCreateGame={handleCreateGame} />
+         </Container>
+      </HeaderLayout>
    );
 }

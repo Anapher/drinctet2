@@ -15,7 +15,7 @@ export type Player = z.infer<typeof PlayerSchema>;
 
 export const GameConfigSchema = z.object({
    players: z.array(PlayerSchema).min(2),
-   cardDeckIds: z.array(z.number()).min(1),
+   cardDeckIds: z.array(z.string()).min(1),
    couples: z.array(z.tuple([z.string(), z.string()])).optional(),
    pairOppositeGendersMoreLikely: z.boolean().optional(),
    slideTypeWeights: z.record(z.number()),
@@ -28,7 +28,7 @@ export type AppConfig = {
 
 export type CardDeck = {
    name: string;
-   id: number;
+   id: string;
 };
 
 export type Game = {
@@ -51,5 +51,5 @@ export type CachedSlide = {
 
 export type GameCard<T = GameCardData> = {
    data: T;
-   id: number;
+   id: string;
 };

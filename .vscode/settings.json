@@ -1,0 +1,8 @@
+{
+  "json.schemas": [
+    {
+      "fileMatch": ["/card-decks/**"],
+      "url": "./app/src/assets/card-decks/schema.json"
+    }
+  ]
+}
