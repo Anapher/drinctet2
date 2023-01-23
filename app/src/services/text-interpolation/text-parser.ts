@@ -52,9 +52,9 @@ export default function parseText(s: string): TextFragment[] {
 }
 
 function parseVariableFragment(content: string): TextFragment {
-   content = content.toLowerCase();
+   if (content.toLowerCase().startsWith(PlayerVariable)) {
+      content = content.toLowerCase();
 
-   if (content.startsWith(PlayerVariable)) {
       // Samples:
       // {player1}
       // {player12}
@@ -64,7 +64,9 @@ function parseVariableFragment(content: string): TextFragment {
       return { type: 'player', index };
    }
 
-   if (content.startsWith(SipsVariable)) {
+   if (content.toLowerCase().startsWith(SipsVariable)) {
+      content = content.toLowerCase();
+
       // Samples:
       // {sips}
       // {sips2}
@@ -82,6 +84,15 @@ function parseVariableFragment(content: string): TextFragment {
       }
 
       return { type: 'sips', index, min };
+   }
+
+   if (content.includes('/')) {
+      const splits = content.split('/');
+      if (splits.length !== 2) {
+         throw new Error("A gendered fragment must have exactly two parts delimited by a '/'");
+      }
+
+      return { type: 'gendered', male: splits[0], female: splits[1] };
    }
 
    throw new Error(`Invalid variable ${content}`);
@@ -145,7 +156,7 @@ function parseNumberedToken(
    let index = 1;
 
    if (tag.length > tokenName.length) {
-      index = Number(tag.substring(SipsVariable.length));
+      index = Number(tag.substring(tokenName.length));
       if (Number.isNaN(index)) {
          throw new Error(`The index of "${tag}" could not be parsed.`);
       }
@@ -230,6 +241,12 @@ export type SipsFragment = {
    min?: number;
 };
 
+export type GenderedFragment = {
+   type: 'gendered';
+   male: string;
+   female: string;
+};
+
 export type RandomListSelectionFragment = {
    type: 'random-selection';
    options: string[];
@@ -249,6 +266,7 @@ export type TextFragment =
    | PlainTextFragment
    | PlayerFragment
    | SipsFragment
+   | GenderedFragment
    | RandomListSelectionFragment
    | RandomLetterSelectionFragment
    | RandomNumberSelectionFragment;

@@ -10,6 +10,7 @@ const globalConfig: GlobalConfig = {
       category: 1,
       neverHaveIEver: 1,
       mostLikely: 1,
+      dare: 1,
    },
 };
 

@@ -2,12 +2,12 @@ import { ComponentMeta, Story } from '@storybook/react';
 import slideFactory, { State } from '.';
 import '../../../services/i18n';
 import { RenderSlideWithBackground } from '../slide-story-utils';
-import CategorySlide from './Slide';
+import DareSlide from './Slide';
 
 export default {
-   title: 'Slides/Category',
-   component: CategorySlide,
-} as ComponentMeta<typeof CategorySlide>;
+   title: 'Slides/Dare',
+   component: DareSlide,
+} as ComponentMeta<typeof DareSlide>;
 
 const Template: Story<State> = (state) => {
    return <RenderSlideWithBackground slideFactory={slideFactory} state={state} />;
@@ -15,7 +15,6 @@ const Template: Story<State> = (state) => {
 
 export const Primary = Template.bind({});
 Primary.args = {
-   startingPlayerName: 'Joaquine',
-   textFragments: [{ type: 'plain', text: 'Cars' }],
-   sips: 5,
+   textFragments: [{ type: 'plain', text: 'Send a Selfie to the person you texted for the last time.' }],
+   playerName: 'Sammy',
 };

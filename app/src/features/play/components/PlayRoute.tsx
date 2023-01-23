@@ -14,7 +14,7 @@ export default function PlayRoute() {
    const navigate = useNavigate();
    const { t } = useTranslation();
 
-   const gameForm = useGameForm({ cardDeckIds: ['nice'], slideTypeWeights: globalConfig.defaultSlideWeights });
+   const gameForm = useGameForm({ cardDeckIds: ['nice', 'horny'], slideTypeWeights: globalConfig.defaultSlideWeights });
 
    const {
       handleSubmit,

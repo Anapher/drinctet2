@@ -1,16 +1,15 @@
 import { Typography } from '@mui/material';
-import { styled } from '@mui/system';
+import { Box } from '@mui/system';
 import { useTranslation } from 'react-i18next';
 import { State } from '.';
-
-const CenteredContainer = styled('div')({
-   display: 'flex',
-   alignItems: 'center',
-   justifyContent: 'center',
-   height: '100%',
-   width: '100%',
-   color: 'white',
-});
+import {
+   CardBottom,
+   CardHeader,
+   CardContainer,
+   descriptionTextFontSize,
+   mainTextFontSize,
+   titleTypographyProps,
+} from '../styles';
 
 type Props = {
    state: State;
@@ -18,15 +17,23 @@ type Props = {
 
 function CustomTruthOrDareSlide({ state: { playerName } }: Props) {
    const { t } = useTranslation();
+
    return (
-      <CenteredContainer>
-         <div>
-            <Typography variant="h5" fontWeight="bold">
-               {t('slides:customTruthOrDare.truthOrDare')}
+      <CardContainer>
+         <CardHeader>
+            <Typography {...titleTypographyProps}>{t('slides:customTruthOrDare.truthOrDare')}</Typography>
+         </CardHeader>
+         <Box mx={3}>
+            <Typography align="center" fontSize={mainTextFontSize}>
+               {playerName}
             </Typography>
-            <Typography align="center">{playerName}</Typography>
-         </div>
-      </CenteredContainer>
+         </Box>
+         <CardBottom>
+            <Typography fontSize={descriptionTextFontSize} align="center">
+               {t('slides:customTruthOrDare.description')}
+            </Typography>
+         </CardBottom>
+      </CardContainer>
    );
 }
 

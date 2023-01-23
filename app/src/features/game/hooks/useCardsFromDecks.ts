@@ -1,9 +1,11 @@
 import { GameCard } from '../../../types';
 import niceDeck from '../../../assets/card-decks/nice.json';
+import hornyDeck from '../../../assets/card-decks/horny.json';
 import { GameCardData } from '../../../card-schemas';
 
 const decks: { [key: string]: GameCardData[] } = {
    nice: niceDeck,
+   horny: hornyDeck,
 } as any;
 
 export default function useCardsFromDecks(deckIds?: string[]): { cards: GameCard[]; error?: string; loading: boolean } {

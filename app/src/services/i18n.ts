@@ -2,6 +2,7 @@ import i18next from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 import en from '../assets/locales/en';
+import de from '../assets/locales/de';
 
 type LanguageInfo = {
    id: string;
@@ -10,9 +11,13 @@ type LanguageInfo = {
 
 const resources = {
    en,
+   de,
 };
 
-export const supportedLanguages: LanguageInfo[] = [{ id: 'en', name: 'English' }];
+export const supportedLanguages: LanguageInfo[] = [
+   { id: 'en', name: 'English' },
+   { id: 'de', name: 'Deutsch' },
+];
 
 i18next
    .use(initReactI18next)

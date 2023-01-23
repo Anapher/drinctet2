@@ -1,9 +1,21 @@
 import AddIcon from '@mui/icons-material/Add';
-import { Divider, IconButton, List, ListItem, ListItemButton, ListItemText, ListSubheader, Stack } from '@mui/material';
+import {
+   Dialog,
+   DialogTitle,
+   Divider,
+   IconButton,
+   List,
+   ListItem,
+   ListItemButton,
+   ListItemText,
+   ListSubheader,
+   Stack,
+} from '@mui/material';
 import cuid from 'cuid';
 import { KeyboardEvent, useState } from 'react';
 import { Control, useFieldArray, UseFormReturn } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
+import { supportedLanguages } from '../../services/i18n';
 import { GameConfig, Player } from '../../types';
 import AddPlayerRow from './AddPlayerRow';
 
@@ -25,7 +37,48 @@ function GameForm({ form: { control } }: GameFormProps) {
                <ListItemText primary="Advanced Config" />
             </ListItemButton>
          </ListItem>
+         <LanguageMenuItem />
       </List>
+   );
+}
+
+function LanguageMenuItem() {
+   const { i18n } = useTranslation();
+   const [dialogOpen, setDialogOpen] = useState(false);
+
+   const handleOpenDialog = () => setDialogOpen(true);
+   const handleCloseDialog = () => setDialogOpen(false);
+
+   const handleChangeLanguage = (lang: string) => {
+      i18n.changeLanguage(lang);
+      setDialogOpen(false);
+   };
+
+   return (
+      <>
+         <ListItem divider disablePadding>
+            <ListItemButton onClick={handleOpenDialog}>
+               <ListItemText
+                  primary="Language"
+                  secondary={
+                     supportedLanguages.find((x) => x.id === i18n.resolvedLanguage)?.name || i18n.resolvedLanguage
+                  }
+               />
+            </ListItemButton>
+         </ListItem>
+         <Dialog open={dialogOpen} onClose={handleCloseDialog}>
+            <DialogTitle>Phone Ringtone</DialogTitle>
+            <List sx={{ pt: 0 }}>
+               {supportedLanguages.map((x) => (
+                  <ListItem disableGutters key={x.id}>
+                     <ListItemButton onClick={() => handleChangeLanguage(x.id)}>
+                        <ListItemText primary={x.name} />
+                     </ListItemButton>
+                  </ListItem>
+               ))}
+            </List>
+         </Dialog>
+      </>
    );
 }
 

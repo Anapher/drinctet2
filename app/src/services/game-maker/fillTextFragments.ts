@@ -7,19 +7,42 @@ import selectSips from './selectSips';
 
 const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
-export default function fillTextFragments(text: string, context: GameContext): FilledTextFragment[] {
+export default function fillTextFragments(
+   text: string,
+   context: GameContext,
+   pickedPlayers?: Player[],
+): FilledTextFragment[] {
    const parsed = parseInterpolatedText(context, text);
 
    const playerIndexes = getUniquePlayerIndexes(parsed);
-   const selectedPlayers = selectPlayers(context.game, playerIndexes.size);
+   if (pickedPlayers) {
+      for (let i = 1; i <= pickedPlayers.length; i++) {
+         playerIndexes.delete(i);
+      }
+   }
 
-   const players = Object.fromEntries(new Array(playerIndexes.keys()).map((index, i) => [index, selectedPlayers[i]]));
+   const selectedPlayers = selectPlayers(
+      context.game,
+      playerIndexes.size,
+      pickedPlayers?.map((x) => x.id),
+   );
+
+   const players = Object.fromEntries(Array.from(playerIndexes.keys()).map((index, i) => [index, selectedPlayers[i]]));
+
+   if (pickedPlayers) {
+      for (let i = 1; i <= pickedPlayers.length; i++) {
+         players[i] = pickedPlayers[i - 1];
+      }
+   }
+
+   let lastMentionedPlayerIndex = 1;
 
    return parsed.map<FilledTextFragment>((fragment) => {
       switch (fragment.type) {
          case 'plain':
             return fragment;
          case 'player':
+            lastMentionedPlayerIndex = fragment.index;
             return { type: 'player', player: players[fragment.index] };
          case 'sips':
             return { type: 'sips', amount: selectSips(fragment.min) };
@@ -38,8 +61,11 @@ export default function fillTextFragments(text: string, context: GameContext): F
                type: 'selection',
                text: selectRandomWeighted(alphabet, () => 1)!.toUpperCase(),
             };
-         default:
-            throw new Error('Unknown text fragment');
+         case 'gendered':
+            return {
+               type: 'plain',
+               text: fragment[players[lastMentionedPlayerIndex].gender],
+            };
       }
    });
 }
