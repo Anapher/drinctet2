@@ -11,7 +11,7 @@ const Container = styled('div')({
 const ContentContainer = (props: React.HTMLProps<HTMLDivElement>) => {
    return (
       <Container>
-         <div style={{ flex: 1, width: '100%', maxWidth: 600 }} {...props}></div>
+         <div style={{ flex: 1, width: '100%', maxWidth: 600 }} {...props} />
       </Container>
    );
 };
