@@ -1,4 +1,3 @@
-import { Container } from '@mui/system';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Game } from '../../../types';
