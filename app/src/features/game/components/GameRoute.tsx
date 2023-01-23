@@ -88,7 +88,7 @@ function GameRoute() {
    };
 
    return (
-      <Box position="relative" width="100%" height="100%" color="white">
+      <Box position="relative" width="100%" height="100%" color="white" style={{ overflow: 'hidden' }}>
          <Box position="absolute" top={8} right={8}>
             <GameMenuButton />
          </Box>
