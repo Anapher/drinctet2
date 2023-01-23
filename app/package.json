@@ -42,7 +42,7 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "build-schema": "tsc generate-schema.ts && node generate-schema.js > src/assets/card-decks/schema.json && rm generate-schema.js"
+    "build-schema": "tsc generate-schema.ts && node generate-schema.js > src/assets/card-decks/.schema.json && rm generate-schema.js"
   },
   "eslintConfig": {
     "extends": [
