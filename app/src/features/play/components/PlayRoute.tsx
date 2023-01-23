@@ -17,9 +17,7 @@ export default function PlayRoute() {
 
    return (
       <HeaderLayout>
-         <Container maxWidth="md">
-            <GameForm onCreateGame={handleCreateGame} />
-         </Container>
+         <GameForm onCreateGame={handleCreateGame} />
       </HeaderLayout>
    );
 }
