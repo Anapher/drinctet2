@@ -1,0 +1,18 @@
+{
+   "app_name": "Sparkles",
+   "layout": {
+      "active_game": "Active game"
+   },
+   "play": {
+      "lets_play": "Let's Play",
+      "add_player": "Add Player",
+      "players": "Players"
+   },
+   "game": {
+      "menu": {
+         "go_back": "Go back"
+      },
+      "sip_one": "one sip",
+      "sip_other": "{{count}} sips"
+   }
+}

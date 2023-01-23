@@ -1,0 +1,16 @@
+{
+   "customTruthOrDare": {
+      "truthOrDare": "Truth Or Dare"
+   },
+   "category": {
+      "title": "Category",
+      "description": "{{player}} starts with guessing a word. If one has no idea or repeats a word, drink {{sips}}."
+   },
+   "neverHaveIEver": {
+      "title": "Never have I ever...",
+      "description": "Everyone who has done it drinks {{sips}}."
+   },
+   "mostLikely": {
+      "description": "On the count of three, everyone points to the person. The person with the most votes drinks {{sips}}."
+   }
+}
