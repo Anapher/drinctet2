@@ -1,7 +1,7 @@
 import { IconButton, InputAdornment, TextField, TextFieldProps } from '@mui/material';
 import { Gender } from '../../../types';
-// import MaleIcon from '@mui/icons-material/Male';
-// import FemaleIcon from '@mui/icons-material/Female';
+import MaleIcon from '@mui/icons-material/Male';
+import FemaleIcon from '@mui/icons-material/Female';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 export type AddPlayerRowProps = {
@@ -17,8 +17,8 @@ export type AddPlayerRowProps = {
    textFieldProps?: TextFieldProps;
 };
 
-function AddPlayerRow({ name, onChangeName, onRemove, textFieldProps }: AddPlayerRowProps) {
-   // const handleClickGenderButton = () => onChangeGender(gender === 'male' ? 'female' : 'male');
+function AddPlayerRow({ name, onChangeName, onRemove, textFieldProps, onChangeGender, gender }: AddPlayerRowProps) {
+   const handleClickGenderButton = () => onChangeGender(gender === 'male' ? 'female' : 'male');
 
    return (
       <TextField
@@ -27,13 +27,13 @@ function AddPlayerRow({ name, onChangeName, onRemove, textFieldProps }: AddPlaye
          value={name}
          onChange={(ev) => onChangeName(ev.target.value)}
          InputProps={{
-            // startAdornment: (
-            //    <InputAdornment position="start">
-            //       <IconButton onClick={handleClickGenderButton} color="primary">
-            //          {gender === 'male' ? <MaleIcon /> : <FemaleIcon />}
-            //       </IconButton>
-            //    </InputAdornment>
-            // ),
+            startAdornment: (
+               <InputAdornment position="start">
+                  <IconButton onClick={handleClickGenderButton} color="primary">
+                     {gender === 'male' ? <MaleIcon /> : <FemaleIcon />}
+                  </IconButton>
+               </InputAdornment>
+            ),
             endAdornment: (
                <InputAdornment position="end">
                   <IconButton onClick={onRemove}>

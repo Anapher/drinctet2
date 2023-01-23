@@ -1,6 +1,6 @@
 import { Button, Divider, IconButton, List, ListItem, ListItemText, ListSubheader, Stack } from '@mui/material';
 import { Control, useFieldArray, useForm } from 'react-hook-form';
-import { GameConfig, GameConfigSchema, Player } from '../../../types';
+import { Game, GameConfig, GameConfigSchema, Player } from '../../../types';
 import AddIcon from '@mui/icons-material/Add';
 import AddPlayerRow from './AddPlayerRow';
 import { useTranslation } from 'react-i18next';
@@ -8,10 +8,7 @@ import cuid from 'cuid';
 import { KeyboardEvent, useState } from 'react';
 import * as z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import createNewGame from '../../../services/game-maker/createNewGame';
-import { loadGame } from '../../game/slice';
 import globalConfig from '../../../global-config';
 
 const removeEmptyPlayers: (config: GameConfig) => GameConfig = (config) => ({
@@ -20,10 +17,12 @@ const removeEmptyPlayers: (config: GameConfig) => GameConfig = (config) => ({
 });
 const ignoreEmptyPlayersSchema = z.preprocess(removeEmptyPlayers as any, GameConfigSchema);
 
-function GameForm() {
-   const dispatch = useDispatch();
+type GameFormProps = {
+   onCreateGame: (game: Game) => void;
+};
+
+function GameForm({ onCreateGame }: GameFormProps) {
    const { t } = useTranslation();
-   const navigate = useNavigate();
 
    const {
       handleSubmit,
@@ -37,8 +36,7 @@ function GameForm() {
 
    const onSubmit = (config: GameConfig) => {
       const game = createNewGame({ ...config });
-      dispatch(loadGame(game));
-      navigate('/game');
+      onCreateGame(game);
    };
 
    return (
@@ -48,7 +46,7 @@ function GameForm() {
       >
          <List style={{ flex: 1, overflowY: 'auto', minHeight: 0 }} disablePadding>
             <ListItem button divider>
-               <ListItemText primary="Card decks" secondary={'Loading...'} />
+               <ListItemText primary="Card decks" secondary={'Not supported at the moment'} />
             </ListItem>
             <PlayerList control={control} />
             <ListItem button divider>
