@@ -10,5 +10,17 @@
         "dare": {
             "en": "Do this"
         }
+    },
+    {
+        "type": "activity",
+        "content": {
+            "de": "Rechne dein Körpergewicht durch 10 und verteile so viele Schlucke"
+        }
+    },
+    {
+        "type": "activity",
+        "content": {
+            "de": "Mache jetzt so viele Liegestütze wie du kannst und verteile einen Schluck pro erfolgreicher Liegestütze."
+        }
     }
 ]

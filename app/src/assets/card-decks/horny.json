@@ -278,6 +278,12 @@
     {
         "type": "truth",
         "truth": {
+            "de": "Wie viele unterschiedliche Personen hast du im letzten Jahr geküsst?"
+        }
+    },
+    {
+        "type": "truth",
+        "truth": {
             "de": "Hattest du schon einmal Sex im Freien?"
         }
     },
