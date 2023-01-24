@@ -7,14 +7,14 @@ import selectSips from './selectSips';
 
 const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
-export default function fillTextFragments(
-   text: string,
+export function fillMultipleTextFragments(
+   text: string[],
    context: GameContext,
    pickedPlayers?: Player[],
-): FilledTextFragment[] {
-   const parsed = parseInterpolatedText(context, text);
+): FilledTextFragment[][] {
+   const parsed = text.map((x) => parseInterpolatedText(context, x));
 
-   const playerIndexes = getUniquePlayerIndexes(parsed);
+   const playerIndexes = getUniquePlayerIndexes(parsed.flat());
    if (pickedPlayers) {
       for (let i = 1; i <= pickedPlayers.length; i++) {
          playerIndexes.delete(i);
@@ -37,37 +37,47 @@ export default function fillTextFragments(
 
    let lastMentionedPlayerIndex = 1;
 
-   return parsed.map<FilledTextFragment>((fragment) => {
-      switch (fragment.type) {
-         case 'plain':
-            return fragment;
-         case 'player':
-            lastMentionedPlayerIndex = fragment.index;
-            return { type: 'player', player: players[fragment.index] };
-         case 'sips':
-            return { type: 'sips', amount: selectSips(fragment.min) };
-         case 'random-selection-number':
-            return {
-               type: 'selection',
-               text: String(Math.round(Math.random() * (fragment.max - fragment.min) + fragment.min)),
-            };
-         case 'random-selection':
-            return {
-               type: 'selection',
-               text: selectRandomWeighted(fragment.options, () => 1)!,
-            };
-         case 'random-selection-letter':
-            return {
-               type: 'selection',
-               text: selectRandomWeighted(alphabet, () => 1)!.toUpperCase(),
-            };
-         case 'gendered':
-            return {
-               type: 'plain',
-               text: fragment[players[lastMentionedPlayerIndex].gender],
-            };
-      }
-   });
+   return parsed.map((x) =>
+      x.map<FilledTextFragment>((fragment) => {
+         switch (fragment.type) {
+            case 'plain':
+               return fragment;
+            case 'player':
+               lastMentionedPlayerIndex = fragment.index;
+               return { type: 'player', player: players[fragment.index] };
+            case 'sips':
+               return { type: 'sips', amount: selectSips(fragment.min) };
+            case 'random-selection-number':
+               return {
+                  type: 'selection',
+                  text: String(Math.round(Math.random() * (fragment.max - fragment.min) + fragment.min)),
+               };
+            case 'random-selection':
+               return {
+                  type: 'selection',
+                  text: selectRandomWeighted(fragment.options, () => 1)!,
+               };
+            case 'random-selection-letter':
+               return {
+                  type: 'selection',
+                  text: selectRandomWeighted(alphabet, () => 1)!.toUpperCase(),
+               };
+            case 'gendered':
+               return {
+                  type: 'plain',
+                  text: fragment[players[lastMentionedPlayerIndex].gender],
+               };
+         }
+      }),
+   );
+}
+
+export default function fillTextFragments(
+   text: string,
+   context: GameContext,
+   pickedPlayers?: Player[],
+): FilledTextFragment[] {
+   return fillMultipleTextFragments([text], context, pickedPlayers)[0];
 }
 
 export function getUniquePlayerIndexes(fragments: TextFragment[]) {

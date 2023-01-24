@@ -67,7 +67,7 @@ function LanguageMenuItem() {
             </ListItemButton>
          </ListItem>
          <Dialog open={dialogOpen} onClose={handleCloseDialog}>
-            <DialogTitle>Phone Ringtone</DialogTitle>
+            <DialogTitle>Change Language</DialogTitle>
             <List sx={{ pt: 0 }}>
                {supportedLanguages.map((x) => (
                   <ListItem disableGutters key={x.id}>

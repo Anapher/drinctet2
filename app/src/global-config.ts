@@ -11,6 +11,7 @@ const globalConfig: GlobalConfig = {
       neverHaveIEver: 1,
       mostLikely: 1,
       dare: 1,
+      thisOrThat: 1,
    },
 };
 

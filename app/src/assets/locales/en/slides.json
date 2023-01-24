@@ -17,5 +17,9 @@
    "dare": {
       "title": "Task",
       "penalty": "If you don't do it, you have to down your drink."
+   },
+   "thisOrThat": {
+      "or": "or",
+      "description": "Vote on the count of three and {{sips}} for the minority!"
    }
 }

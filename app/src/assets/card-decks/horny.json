@@ -484,5 +484,17 @@
         "dare": {
             "de": "Öffne alle Knöpfe und Reißverschlüsse deiner Kleidung."
         }
+    },
+    {
+        "type": "neverHaveIEver",
+        "statement": {
+            "de": "Sex gehabt dieses Jahr."
+        }
+    },
+    {
+        "type": "mostLikely",
+        "question": {
+            "de": "Wer hat am ehsten Sex in den nächsten 24 Stunden?"
+        }
     }
 ]
