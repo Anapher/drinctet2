@@ -19,16 +19,15 @@ const factory: SlideFactory<State> = {
          'thisOrThat',
          context,
          pipeChecks(
-            hasLanguage((x) => x.option1),
-            hasLanguage((x) => x.option2),
-            textFragmentsFeasible((card, lang) => card.option1[lang] + card.option2[lang]),
+            hasLanguage((x) => x.options),
+            textFragmentsFeasible((card, lang) => card.options[lang].join()),
          ),
       );
 
-      const textFragments = fillMultipleTextFragments(
-         [card.data.option1[context.lang], card.data.option2[context.lang]],
-         context,
-      ) as [FilledTextFragment[], FilledTextFragment[]];
+      const textFragments = fillMultipleTextFragments(card.data.options[context.lang], context) as [
+         FilledTextFragment[],
+         FilledTextFragment[],
+      ];
 
       return { textFragments, sips: selectSips() };
    },

@@ -27,8 +27,7 @@ export type DareCard = z.infer<typeof dareCardSchema>;
 
 export const thisOrThatCardSchema = z.object({
    type: z.literal('thisOrThat'),
-   option1: z.record(z.string()),
-   option2: z.record(z.string()),
+   options: z.record(z.tuple([z.string(), z.string()])),
 });
 export type ThisOrThatCard = z.infer<typeof truthCardSchema>;
 
