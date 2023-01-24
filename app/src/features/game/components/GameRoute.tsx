@@ -29,6 +29,7 @@ function GameRoute() {
       const preventDefault = (e: TouchEvent) => e.preventDefault();
 
       document.body.addEventListener('touchmove', preventDefault, { passive: false });
+      document.body.scrollTop = 0;
 
       return () => {
          document.body.removeEventListener('touchmove', preventDefault);
