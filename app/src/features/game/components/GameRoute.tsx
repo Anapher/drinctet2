@@ -25,6 +25,16 @@ function GameRoute() {
       }
    }, [game]);
 
+   useEffect(() => {
+      const preventDefault = (e: TouchEvent) => e.preventDefault();
+
+      document.body.addEventListener('touchmove', preventDefault, { passive: false });
+
+      return () => {
+         document.body.removeEventListener('touchmove', preventDefault);
+      };
+   }, []);
+
    const { cards, loading, error } = useCardsFromDecks(game?.config.cardDeckIds);
    const cache = useRef(new Map<string, any>()).current;
 
