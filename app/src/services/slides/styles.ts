@@ -32,6 +32,8 @@ export const CardHeader = styled('div')(({ theme }) => ({
 export const CardBottom = styled('div')(({ theme }) => ({
    flex: 1,
    paddingTop: theme.spacing(2),
+   paddingLeft: theme.spacing(2),
+   paddingRight: theme.spacing(2),
 }));
 
 export const titleTypographyProps: TypographyProps = {
