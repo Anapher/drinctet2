@@ -2,14 +2,14 @@ import { styled } from '@mui/system';
 import { TypographyProps } from '@mui/material';
 
 export const mainTextFontSize: TypographyProps['fontSize'] = {
-   xs: 18,
-   md: 22,
+   xs: 16,
+   md: 20,
 };
 
 export const descriptionTextFontSize: TypographyProps['fontSize'] = {
    xs: 12,
-   sm: 16,
-   lg: 18,
+   sm: 14,
+   lg: 16,
 };
 
 export const CardContainer = styled('div')({

@@ -12,6 +12,7 @@ const globalConfig: GlobalConfig = {
       mostLikely: 1,
       dare: 1,
       thisOrThat: 1,
+      activity: 1,
    },
 };
 

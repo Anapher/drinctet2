@@ -4,6 +4,7 @@ import neverHaveIEver from './neverHaveIEver';
 import mostLikely from './mostLikely';
 import dare from './dare';
 import thisOrThat from './thisOrThat';
+import activity from './activity';
 
 const slideFactories = {
    customTruthOrDare,
@@ -12,6 +13,7 @@ const slideFactories = {
    mostLikely,
    dare,
    thisOrThat,
+   activity,
 };
 
 export type SlideType = keyof typeof slideFactories;
