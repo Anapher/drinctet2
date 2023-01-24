@@ -20,6 +20,10 @@ export const CardContainer = styled('div')({
    color: 'white',
 });
 
+export const CenteredCardContainer = styled(CardContainer)({
+   alignItems: 'center',
+});
+
 export const CardHeader = styled('div')(({ theme }) => ({
    flex: 1,
    display: 'flex',
@@ -27,13 +31,21 @@ export const CardHeader = styled('div')(({ theme }) => ({
    alignItems: 'center',
    justifyContent: 'flex-end',
    paddingBottom: theme.spacing(2),
+   paddingLeft: theme.spacing(3),
+   paddingRight: theme.spacing(3),
 }));
 
 export const CardBottom = styled('div')(({ theme }) => ({
    flex: 1,
    paddingTop: theme.spacing(2),
-   paddingLeft: theme.spacing(2),
-   paddingRight: theme.spacing(2),
+   paddingLeft: theme.spacing(3),
+   paddingRight: theme.spacing(3),
+}));
+
+export const CardMainContent = styled('div')(({ theme }) => ({
+   paddingLeft: theme.spacing(3),
+   paddingRight: theme.spacing(3),
+   maxWidth: 1200,
 }));
 
 export const titleTypographyProps: TypographyProps = {

@@ -1,21 +1,32 @@
 {
    "customTruthOrDare": {
-      "truthOrDare": "Truth Or Dare",
-      "description": "The group asks you truth or dare."
+      "truthOrDare": "Wahrheit oder Pflicht",
+      "description": "Die Gruppe fragt dich, Wahrheit oder Pflicht?"
    },
    "category": {
-      "title": "Category",
-      "description": "{{player}} starts by guessing a word. If one has no idea or repeats a word, drink {{sips}}."
+      "title": "Kategorie",
+      "description": "{{player}} startet und sagt ein Wort. Wenn jemand keine Ideen mehr hat oder etwas wiederholt, trinke {{sips}}."
    },
    "neverHaveIEver": {
-      "title": "Never have I ever...",
-      "description": "Everyone who has done it drinks {{sips}}."
+      "title": "Ich habe noch nie...",
+      "description": "Jeder, der es schonmal gemacht hat, trinkt {{sips}}."
    },
    "mostLikely": {
       "description": "On the count of three, everyone points to the person. The person with the most votes drinks {{sips}}."
    },
    "dare": {
-      "title": "Task",
-      "penalty": "If you don't do it, you have to down your drink."
+      "title": "Aufgabe",
+      "penalty": "Wenn du es nicht machen willst, musst du dein Getränkt exxen."
+   },
+   "thisOrThat": {
+      "or": "oder",
+      "description": "Stimmt auf drei gleichzeitig ab und {{sips}} für die Verlierer!"
+   },
+   "fact": {
+      "title": ", entscheide, ob folgende Aussage wahr ist:",
+      "tap_to_dissolve": "Tippen, um aufzulösen",
+      "true_text": "Es ist wahr.",
+      "false_text": "Es ist falsch.",
+      "sips_description": "Wenn du richtig entschieden hast, vergib {{sips}}, sonst trink sie selber."
    }
 }

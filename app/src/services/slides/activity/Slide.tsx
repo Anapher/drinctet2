@@ -1,8 +1,7 @@
 import { Typography } from '@mui/material';
-import { Box } from '@mui/system';
 import { State } from '.';
 import RenderFragments from '../RenderFragments';
-import { CardBottom, CardContainer, CardHeader, mainTextFontSize } from '../styles';
+import { CardBottom, CardHeader, CardMainContent, CenteredCardContainer, mainTextFontSize } from '../styles';
 
 type Props = {
    state: State;
@@ -10,15 +9,15 @@ type Props = {
 
 function ThisOrThatSlide({ state: { textFragments } }: Props) {
    return (
-      <CardContainer>
+      <CenteredCardContainer>
          <CardHeader />
-         <Box mx={3}>
+         <CardMainContent>
             <Typography align="center" fontSize={mainTextFontSize}>
                <RenderFragments filledFragments={textFragments} />
             </Typography>
-         </Box>
+         </CardMainContent>
          <CardBottom />
-      </CardContainer>
+      </CenteredCardContainer>
    );
 }
 

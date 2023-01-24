@@ -8,13 +8,17 @@ import createNewGame from '../../../services/game-maker/createNewGame';
 import { GameConfig } from '../../../types';
 import { loadGame } from '../../game/slice';
 import HeaderLayout from './HeaderLayout';
+import cardDecks from '../../../assets/card-decks';
 
 export default function PlayRoute() {
    const dispatch = useDispatch();
    const navigate = useNavigate();
    const { t } = useTranslation();
 
-   const gameForm = useGameForm({ cardDeckIds: ['nice', 'horny'], slideTypeWeights: globalConfig.defaultSlideWeights });
+   const gameForm = useGameForm({
+      cardDeckIds: Object.keys(cardDecks),
+      slideTypeWeights: globalConfig.defaultSlideWeights,
+   });
 
    const {
       handleSubmit,

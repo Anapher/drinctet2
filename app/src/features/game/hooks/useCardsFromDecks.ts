@@ -1,16 +1,9 @@
 import { GameCard } from '../../../types';
-import niceDeck from '../../../assets/card-decks/nice.json';
-import hornyDeck from '../../../assets/card-decks/horny.json';
-import { GameCardData } from '../../../card-schemas';
-
-const decks: { [key: string]: GameCardData[] } = {
-   nice: niceDeck,
-   horny: hornyDeck,
-} as any;
+import cardDecks from '../../../assets/card-decks';
 
 export default function useCardsFromDecks(deckIds?: string[]): { cards: GameCard[]; error?: string; loading: boolean } {
    return {
-      cards: Object.entries(decks)
+      cards: Object.entries(cardDecks)
          .filter(([id]) => deckIds?.includes(id))
          .flatMap<GameCard>(([id, cards]) => cards.map<GameCard>((data, index) => ({ id: `${id}/${index}`, data }))),
       loading: false,

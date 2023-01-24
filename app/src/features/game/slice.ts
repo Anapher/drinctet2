@@ -28,9 +28,13 @@ export const gameSlice = createSlice({
          if (!state.game) return;
          state.game.stack.push(payload);
       },
+      updateSlideState(state, { payload: { newState, index } }: PayloadAction<{ index: number; newState: any }>) {
+         if (!state.game) return;
+         state.game.stack[index].state = newState;
+      },
    },
 });
 
-export const { loadGame, setIndex, appendToStack, deleteGame } = gameSlice.actions;
+export const { loadGame, setIndex, appendToStack, deleteGame, updateSlideState } = gameSlice.actions;
 
 export default gameSlice.reducer;

@@ -21,5 +21,12 @@
    "thisOrThat": {
       "or": "or",
       "description": "Vote on the count of three and {{sips}} for the minority!"
+   },
+   "fact": {
+      "title": ", decide if the following statement is true:",
+      "tap_to_dissolve": "Tap to dissolve",
+      "true_text": "It's true.",
+      "false_text": "It's wrong.",
+      "sips_description": "If you guessed right, share {{sips}}, else drink them."
    }
 }

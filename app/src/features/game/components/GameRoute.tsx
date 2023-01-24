@@ -10,7 +10,7 @@ import { Game, GameCard, GameContext } from '../../../types';
 import ScrollContainer from '../../../components/ScrollContainer';
 import useCardsFromDecks from '../hooks/useCardsFromDecks';
 import { selectGame } from '../selectors';
-import { appendToStack, setIndex } from '../slice';
+import { appendToStack, setIndex, updateSlideState } from '../slice';
 import GameMenuButton from './GameMenuButton';
 
 function GameRoute() {
@@ -92,7 +92,7 @@ function GameRoute() {
       const slide = game.stack[index];
       const factory = getSlideFactory(slide.type);
       const handleChangeState = (state: any) => {
-         console.log('update', state);
+         dispatch(updateSlideState({ index: index, newState: state }));
       };
 
       return factory.renderState(slide.state, handleChangeState, getGameContext(game, cards));

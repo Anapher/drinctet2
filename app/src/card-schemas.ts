@@ -66,6 +66,7 @@ export const factCardSchema = z.object({
    type: z.literal('fact'),
    is: z.boolean(),
    text: z.record(z.string()),
+   source: z.string().optional(),
 });
 export type FactCard = z.infer<typeof factCardSchema>;
 

@@ -13,6 +13,7 @@ const globalConfig: GlobalConfig = {
       dare: 1,
       thisOrThat: 1,
       activity: 1,
+      fact: 1,
    },
 };
 
