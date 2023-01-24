@@ -67,7 +67,7 @@ function ScrollContainer<T>({
 
    const handleOnDragEnd = async (_: any, info: PanInfo) => {
       const doIt =
-         Math.abs(info.velocity.y) > 1000 || info.offset.y > (containerRef.current?.clientHeight || 600) * 0.2;
+         Math.abs(info.velocity.y) > 1000 || info.offset.y > (containerRef.current?.clientHeight || 600) * 0.1;
 
       if (doIt && info.offset.y > 0 && canScrollUp) {
          await animation.start('toTop');
