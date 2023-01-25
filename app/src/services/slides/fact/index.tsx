@@ -11,7 +11,7 @@ export type State = {
    sips: number;
    is: boolean;
    playerName: string;
-   dissolved: boolean;
+   userDecision: boolean | 'outstanding';
 };
 
 const factory: SlideFactory<State> = {
@@ -31,11 +31,17 @@ const factory: SlideFactory<State> = {
       );
 
       const textFragments = fillTextFragments(card.data.text[context.lang], context, []);
-      return { textFragments, sips: selectSips(), playerName: player.name, is: card.data.is, dissolved: false };
+      return {
+         textFragments,
+         sips: selectSips(),
+         playerName: player.name,
+         is: card.data.is,
+         userDecision: 'outstanding',
+      };
    },
    renderState(state, onChangeState) {
-      const handleDissolve = () => {
-         onChangeState({ ...state, dissolved: true });
+      const handleDissolve = (decision: boolean) => {
+         onChangeState({ ...state, userDecision: decision });
       };
 
       return <Slide state={state} onDissolve={handleDissolve} />;

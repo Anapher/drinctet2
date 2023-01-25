@@ -24,9 +24,13 @@
    },
    "fact": {
       "title": ", entscheide, ob folgende Aussage wahr ist:",
-      "tap_to_dissolve": "Tippen, um aufzulösen",
-      "true_text": "Es ist wahr.",
-      "false_text": "Es ist falsch.",
-      "sips_description": "Wenn du richtig entschieden hast, vergib {{sips}}, sonst trink sie selber."
+      "true": "Wahr",
+      "false": "Falsch",
+      "true_right_text": "Du hast Recht, die Aussage ist wahr.",
+      "true_wrong_text": "Du liegst falsch, die Aussage ist wahr.",
+      "false_right_text": "Du hast Recht, die Aussage ist falsch.",
+      "false_wrong_text": "Du liegst falsch, die Aussage ist falsch.",
+      "sips_share": "Trinke {{sips}}.",
+      "sips_drink": "Verteile {{sips}}."
    }
 }

@@ -15,8 +15,9 @@ const Template: Story<State> = (state) => {
 
 export const Primary = Template.bind({});
 Primary.args = {
-   is: true,
+   is: false,
    playerName: 'Sammy',
    sips: 4,
    textFragments: [{ type: 'plain', text: 'The capital of Germany is Bonn' }],
+   userDecision: 'outstanding',
 };

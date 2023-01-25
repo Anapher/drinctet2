@@ -24,10 +24,14 @@
    },
    "fact": {
       "title": ", decide if the following statement is true:",
-      "tap_to_dissolve": "Tap to dissolve",
-      "true_text": "It's true.",
-      "false_text": "It's wrong.",
-      "sips_description": "If you guessed right, share {{sips}}, else drink them."
+      "true": "True",
+      "false": "False",
+      "true_right_text": "You are right, the fact is true.",
+      "true_wrong_text": "You are wrong, the fact is true.",
+      "false_right_text": "You are right, the fact is false.",
+      "false_wrong_text": "You are wrong, the fact is false.",
+      "sips_share": "Share {{sips}}.",
+      "sips_drink": "Drink {{sips}}."
    },
    "customNeverHaveIEver": {
       "main_text": ", tell us something you have never done before.",
