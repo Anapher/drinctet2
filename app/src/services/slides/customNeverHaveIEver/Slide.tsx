@@ -8,6 +8,7 @@ import {
    CenteredCardContainer,
    descriptionTextFontSize,
    mainTextFontSize,
+   titleTypographyProps,
 } from '../styles';
 
 type Props = {
@@ -19,7 +20,9 @@ function ThisOrThatSlide({ state: { playerName, sips } }: Props) {
 
    return (
       <CenteredCardContainer>
-         <CardHeader />
+         <CardHeader>
+            <Typography {...titleTypographyProps}>{t('slides:customNeverHaveIEver.title')}</Typography>
+         </CardHeader>
          <CardMainContent>
             <Typography align="center" fontSize={mainTextFontSize}>
                <b>{playerName}</b>

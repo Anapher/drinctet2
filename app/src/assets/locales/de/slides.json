@@ -9,7 +9,7 @@
    },
    "neverHaveIEver": {
       "title": "Ich habe noch nie...",
-      "description": "Jeder, der es schonmal gemacht hat, trinkt {{sips}}."
+      "description": "Jeder, der es schonmal getan hat, trinkt {{sips}}."
    },
    "mostLikely": {
       "description": "On the count of three, everyone points to the person. The person with the most votes drinks {{sips}}."
@@ -26,11 +26,16 @@
       "title": ", entscheide, ob folgende Aussage wahr ist:",
       "true": "Wahr",
       "false": "Falsch",
-      "true_right_text": "Du hast Recht, die Aussage ist wahr.",
+      "true_right_text": "Du hast recht, die Aussage ist wahr.",
       "true_wrong_text": "Du liegst falsch, die Aussage ist wahr.",
-      "false_right_text": "Du hast Recht, die Aussage ist falsch.",
+      "false_right_text": "Du hast recht, die Aussage ist falsch.",
       "false_wrong_text": "Du liegst falsch, die Aussage ist falsch.",
-      "sips_share": "Trinke {{sips}}.",
-      "sips_drink": "Verteile {{sips}}."
+      "sips_share": "Verteile {{sips}}.",
+      "sips_drink": "Trinke {{sips}}."
+   },
+   "customNeverHaveIEver": {
+      "main_text": ", sag etwas, was du noch nie getan hast.",
+      "title": "Ich habe noch nie...",
+      "description": "Jeder, der es schonmal getan hat, trinkt {{sips}}"
    }
 }

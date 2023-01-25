@@ -35,6 +35,7 @@
    },
    "customNeverHaveIEver": {
       "main_text": ", tell us something you have never done before.",
+      "title": "Never have I ever...",
       "description": "Everyone who has already done it drinks {{sips}}"
    }
 }
