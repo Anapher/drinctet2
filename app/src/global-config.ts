@@ -14,6 +14,7 @@ const globalConfig: GlobalConfig = {
       thisOrThat: 1,
       activity: 1,
       fact: 1,
+      customNeverHaveIEver: 1,
    },
 };
 

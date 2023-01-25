@@ -28,5 +28,9 @@
       "true_text": "It's true.",
       "false_text": "It's wrong.",
       "sips_description": "If you guessed right, share {{sips}}, else drink them."
+   },
+   "customNeverHaveIEver": {
+      "main_text": ", tell us something you have never done before.",
+      "description": "Everyone who has already done it drinks {{sips}}"
    }
 }
