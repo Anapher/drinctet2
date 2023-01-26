@@ -1,5 +1,6 @@
 import GameForm from './GameForm';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import useGameForm from './useGameForm';
 
 export default {
    title: 'Play/GameForm',
@@ -7,7 +8,10 @@ export default {
    argTypes: { onCreateGame: { action: 'onCreateGame' } },
 } as ComponentMeta<typeof GameForm>;
 
-const Template: ComponentStory<typeof GameForm> = (args) => <GameForm {...args} />;
+const Template: ComponentStory<typeof GameForm> = () => {
+   const gameForm = useGameForm({});
+   return <GameForm form={gameForm} />;
+};
 
 export const Large = Template.bind({});
 Large.args = {};
