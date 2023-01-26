@@ -1,7 +1,7 @@
 {
    "customTruthOrDare": {
       "truthOrDare": "Truth Or Dare",
-      "description": "The group asks you truth or dare."
+      "description": "will ask you the question or give you a task. If you don't do it, down your drink."
    },
    "category": {
       "title": "Category",

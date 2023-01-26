@@ -15,7 +15,7 @@ type Props = {
    state: State;
 };
 
-function CustomTruthOrDareSlide({ state: { playerName } }: Props) {
+function CustomTruthOrDareSlide({ state: { targetPlayer, questionPlayer } }: Props) {
    const { t } = useTranslation();
 
    return (
@@ -25,11 +25,12 @@ function CustomTruthOrDareSlide({ state: { playerName } }: Props) {
          </CardHeader>
          <Box mx={3}>
             <Typography align="center" fontSize={mainTextFontSize}>
-               {playerName}
+               <b>{targetPlayer}</b>
             </Typography>
          </Box>
          <CardBottom>
             <Typography fontSize={descriptionTextFontSize} align="center">
+               <b>{questionPlayer} </b>
                {t('slides:customTruthOrDare.description')}
             </Typography>
          </CardBottom>

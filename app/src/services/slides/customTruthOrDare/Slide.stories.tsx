@@ -15,5 +15,6 @@ const Template: Story<State> = (state) => {
 
 export const Primary = Template.bind({});
 Primary.args = {
-   playerName: 'Joaquine',
+   targetPlayer: 'Joaquine',
+   questionPlayer: 'Sammy',
 };

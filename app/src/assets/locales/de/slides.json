@@ -1,7 +1,7 @@
 {
    "customTruthOrDare": {
       "truthOrDare": "Wahrheit oder Pflicht",
-      "description": "Die Gruppe fragt dich, Wahrheit oder Pflicht?"
+      "description": "wird dir die Frage stellen oder die Aufgabe geben. Wenn du es nicht tust, ex dein Getränk."
    },
    "category": {
       "title": "Kategorie",
