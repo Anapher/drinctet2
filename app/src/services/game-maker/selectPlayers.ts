@@ -26,5 +26,5 @@ function getPlayerWeight(player: Player, selected: Player[], game: Game, exclude
 }
 
 function isPlayerInCouple(player: Player, couple: [string, string]) {
-   return couple[0] === player.id && couple[1] === player.id;
+   return couple[0] === player.id || couple[1] === player.id;
 }
