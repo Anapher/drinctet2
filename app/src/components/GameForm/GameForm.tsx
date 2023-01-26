@@ -12,7 +12,7 @@ import {
    Stack,
 } from '@mui/material';
 import cuid from 'cuid';
-import { KeyboardEvent, useState } from 'react';
+import { KeyboardEvent, useEffect, useState } from 'react';
 import { Control, useFieldArray, UseFormReturn } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { supportedLanguages } from '../../services/i18n';
@@ -66,12 +66,15 @@ function LanguageMenuItem() {
                />
             </ListItemButton>
          </ListItem>
-         <Dialog open={dialogOpen} onClose={handleCloseDialog}>
-            <DialogTitle>Change Language</DialogTitle>
+         <Dialog open={dialogOpen} onClose={handleCloseDialog} fullWidth maxWidth="sm">
+            <DialogTitle>Select Language</DialogTitle>
             <List sx={{ pt: 0 }}>
                {supportedLanguages.map((x) => (
                   <ListItem disableGutters key={x.id}>
-                     <ListItemButton onClick={() => handleChangeLanguage(x.id)}>
+                     <ListItemButton
+                        onClick={() => handleChangeLanguage(x.id)}
+                        selected={i18n.resolvedLanguage === x.id}
+                     >
                         <ListItemText primary={x.name} />
                      </ListItemButton>
                   </ListItem>
@@ -106,6 +109,12 @@ function PlayerList({ control }: PlayerListProps) {
          remove(i);
       }
    };
+
+   useEffect(() => {
+      if (fields.length === 0) {
+         handleAddNewPlayer();
+      }
+   }, []);
 
    return (
       <>
