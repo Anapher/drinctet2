@@ -12,7 +12,7 @@
       "description": "Jeder, der es schonmal getan hat, trinkt {{sips}}."
    },
    "mostLikely": {
-      "description": "On the count of three, everyone points to the person. The person with the most votes drinks {{sips}}."
+      "description": "Zählt bis drei und jeder zeigt auf die Person. Die Person mit den meisten Stimmen trinkt {{sips}}."
    },
    "dare": {
       "title": "Aufgabe",

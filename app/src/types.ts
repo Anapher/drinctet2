@@ -19,6 +19,7 @@ export const GameConfigSchema = z.object({
    couples: z.array(z.tuple([z.string(), z.string()])).optional(),
    pairOppositeGendersMoreLikely: z.boolean().optional(),
    slideTypeWeights: z.record(z.number()),
+   alwaysShowEnglishCards: z.boolean(),
 });
 export type GameConfig = z.infer<typeof GameConfigSchema>;
 

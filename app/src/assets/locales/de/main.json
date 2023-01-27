@@ -6,7 +6,10 @@
    "play": {
       "lets_play": "Jetzt spielen",
       "add_player": "Spieler hinzufügen",
-      "players": "Spieler"
+      "players": "Spieler",
+      "select_language": "Sprache auswählen",
+      "language": "Sprache",
+      "always_show_english": "Englische Karten auch zeigen"
    },
    "game": {
       "menu": {

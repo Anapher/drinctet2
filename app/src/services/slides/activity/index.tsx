@@ -1,6 +1,7 @@
 import { hasLanguage, pipeChecks, textFragmentsFeasible } from '../../game-maker/card-validation';
 import fillTextFragments, { FilledTextFragment } from '../../game-maker/fillTextFragments';
 import selectCard from '../../game-maker/selectCard';
+import selectCardLanguage from '../../game-maker/selectCardLanguage';
 import SlideFactory from '../card-factory';
 import Slide from './Slide';
 
@@ -18,11 +19,11 @@ const factory: SlideFactory<State> = {
          context,
          pipeChecks(
             hasLanguage((x) => x.content),
-            textFragmentsFeasible((card, lang) => card.content[lang]),
+            textFragmentsFeasible((card) => selectCardLanguage(card.content, context)),
          ),
       );
 
-      const textFragments = fillTextFragments(card.data.content[context.lang], context, []);
+      const textFragments = fillTextFragments(selectCardLanguage(card.data.content, context), context, []);
 
       return { textFragments };
    },

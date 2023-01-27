@@ -10,16 +10,19 @@ export function pipeChecks<TCard>(...validators: GameCardValidator<TCard>[]): Ga
 }
 
 export function hasLanguage<TCard>(textSelector: (card: TCard) => Record<string, any>): GameCardValidator<TCard> {
-   return (context, card) => Boolean(textSelector(card)[context.lang]);
+   return (context, card) => {
+      return (
+         Boolean(textSelector(card)[context.lang]) ||
+         (context.game.config.alwaysShowEnglishCards && Boolean(textSelector(card)['en']))
+      );
+   };
 }
 
-export function textFragmentsFeasible<TCard>(
-   textSelector: (card: TCard, lang: string) => string,
-): GameCardValidator<TCard> {
+export function textFragmentsFeasible<TCard>(textSelector: (card: TCard) => string): GameCardValidator<TCard> {
    return (context, card) => {
       let fragments: TextFragment[];
       try {
-         fragments = parseInterpolatedText(context, textSelector(card, context.lang));
+         fragments = parseInterpolatedText(context, textSelector(card));
       } catch (error) {
          return false;
       }

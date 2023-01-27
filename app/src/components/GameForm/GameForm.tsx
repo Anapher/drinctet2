@@ -1,5 +1,6 @@
 import AddIcon from '@mui/icons-material/Add';
 import {
+   Checkbox,
    Dialog,
    DialogTitle,
    Divider,
@@ -7,13 +8,14 @@ import {
    List,
    ListItem,
    ListItemButton,
+   ListItemIcon,
    ListItemText,
    ListSubheader,
    Stack,
 } from '@mui/material';
 import cuid from 'cuid';
 import { KeyboardEvent, useEffect, useState } from 'react';
-import { Control, useFieldArray, UseFormReturn } from 'react-hook-form';
+import { Control, Controller, useFieldArray, UseFormReturn } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { supportedLanguages } from '../../services/i18n';
 import { GameConfig, Player } from '../../types';
@@ -37,14 +39,18 @@ function GameForm({ form: { control } }: GameFormProps) {
                <ListItemText primary="Advanced Config" />
             </ListItemButton>
          </ListItem>
-         <LanguageMenuItem />
+         <LanguageMenuItem control={control} />
       </List>
    );
 }
 
-function LanguageMenuItem() {
+type LanguageMenuItemProps = {
+   control: Control<GameConfig>;
+};
+function LanguageMenuItem({ control }: LanguageMenuItemProps) {
    const { i18n } = useTranslation();
    const [dialogOpen, setDialogOpen] = useState(false);
+   const { t } = useTranslation();
 
    const handleOpenDialog = () => setDialogOpen(true);
    const handleCloseDialog = () => setDialogOpen(false);
@@ -59,7 +65,7 @@ function LanguageMenuItem() {
          <ListItem divider disablePadding>
             <ListItemButton onClick={handleOpenDialog}>
                <ListItemText
-                  primary="Language"
+                  primary={t('play.language')}
                   secondary={
                      supportedLanguages.find((x) => x.id === i18n.resolvedLanguage)?.name || i18n.resolvedLanguage
                   }
@@ -67,7 +73,7 @@ function LanguageMenuItem() {
             </ListItemButton>
          </ListItem>
          <Dialog open={dialogOpen} onClose={handleCloseDialog} fullWidth maxWidth="sm">
-            <DialogTitle>Select Language</DialogTitle>
+            <DialogTitle>{t('play.select_language')}</DialogTitle>
             <List sx={{ pt: 0 }}>
                {supportedLanguages.map((x) => (
                   <ListItem disableGutters key={x.id}>
@@ -79,6 +85,22 @@ function LanguageMenuItem() {
                      </ListItemButton>
                   </ListItem>
                ))}
+               <Divider />
+               <Controller
+                  control={control}
+                  name="alwaysShowEnglishCards"
+                  defaultValue={true}
+                  render={({ field: { value, onChange } }) => (
+                     <ListItem disableGutters>
+                        <ListItemButton onClick={() => onChange(!value)}>
+                           <ListItemIcon>
+                              <Checkbox edge="start" tabIndex={-1} disableRipple checked={value} />
+                           </ListItemIcon>
+                           <ListItemText primary={t('play.always_show_english')} />
+                        </ListItemButton>
+                     </ListItem>
+                  )}
+               />
             </List>
          </Dialog>
       </>
@@ -111,8 +133,11 @@ function PlayerList({ control }: PlayerListProps) {
    };
 
    useEffect(() => {
+      console.log('use effect');
+
       if (fields.length === 0) {
          handleAddNewPlayer();
+         console.log('add new');
       }
    }, []);
 

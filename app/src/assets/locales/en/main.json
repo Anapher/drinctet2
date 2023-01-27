@@ -6,7 +6,10 @@
    "play": {
       "lets_play": "Let's Play",
       "add_player": "Add Player",
-      "players": "Players"
+      "players": "Players",
+      "select_language": "Select language",
+      "language": "Language",
+      "always_show_english": "Always show english cards"
    },
    "game": {
       "menu": {
