@@ -22,8 +22,6 @@ function renderFragment(fragment: FilledTextFragment, t: TFunction, index: numbe
          return <b key={index}>{fragment.text}</b>;
       case 'sips':
          return <b key={index}>{t('game.sip', { count: fragment.amount })}</b>;
-      default:
-         break;
    }
 }
 
