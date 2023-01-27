@@ -1,0 +1,72 @@
+[
+    {
+        "type": "miniGame",
+        "content": {
+            "en": {
+                "title": "Viking",
+                "shortExplanation": "{player} starts as the viking. Two people next to him row, everyone else is waves. Looser drinks {sips}.",
+                "explanation": "The viking places their hands text to their head, with the index finger pointing up and makes an 'arrrrrr' sound. The two direct neighbours predend to row making an 'row' sound. Everyone else makes waves with their hands, and a 'woosh' sound. The viking passes their helmet to another player, by pointing at them with their 'helmet' and shouts 'arrr'. Everyone adapts now, the first person to not react on time looses. "
+            }
+        }
+    },
+    {
+        "type": "miniGame",
+        "content": {
+            "en": {
+                "title": "Fingers up",
+                "shortExplanation": "{player} starts. Looser drinks {sips}.",
+                "explanation": "All players place their right index finger on the same object in the middle. A player begins, and on the count of 3 says a number (no higher than the number of fingers in the middle) out loud. As they say the number, all players can decide to keep or remove their finger from the object in the middle. If the number said, matches the fingers in the middle, the player is save, and the game continues without them. Else they stay in the game. The last player still in the game loses."
+            }
+        }
+    },
+    {
+        "type": "miniGame",
+        "content": {
+            "en": {
+                "title": "Make the Band",
+                "shortExplanation": "{player} counts down from three. Everyone plays an pretend instrument with sound effects. If there is two players, with the same instrument, they drink {sips}. If everyone is unique, everyone drinks {sips}",
+                "explanation": "{player} counts down from three. Everyone plays an pretend instrument with sound effects. If there is two players, with the same instrument, they drink {sips}. If everyone is unique, everyone drinks {sips}"
+            }
+        }
+    },
+    {
+        "type": "miniGame",
+        "content": {
+            "en": {
+                "title": "Autobahn",
+                "shortExplanation": "{player} starts and drives clockwise. Looser drinks {sips}.",
+                "explanation": "The first player pretends to be driving a car. They can pretend to turn either left, right or honk. For left they steer to the left, making a 'brumm' sound. For right they steer to the right, making a 'wneww' sound. Their neighbour is then the driver. If they honk, they pretend to honk at someone in the group. That person is then the driver. First one to miss their turn looses."
+            }
+        }
+    },
+    {
+        "type": "miniGame",
+        "content": {
+            "en": {
+                "title": "First sight",
+                "shortExplanation": "All players look to the ceiling. {player} counts down from 3, and everyone looks down at another player. If you make eye contact, both drink {sips}!",
+                "explanation": "All players look to the ceiling. A player counts down from 3, and everyone looks down at another player. If you make eye contact, both drink!"
+            }
+        }
+    },
+    {
+        "type": "miniGame",
+        "content": {
+            "en": {
+                "title": "Guess the song",
+                "shortExplanation": "{player1} plays or sings a song. Starting at {player2} everyone guesses the song clockwise. First one to get it wrong or not at all drinks {sips}.",
+                "explanation": "One player plays or sings a song. Starting at another player everyone guesses the song clockwise. First one to get it wrong or not at all drinks."
+            }
+        }
+    },
+    {
+        "type": "miniGame",
+        "content": {
+            "en": {
+                "title": "7 is devil",
+                "shortExplanation": "{player} starts counting at 1. For a number containing 7 (e.g. 7 or 17) and a multiple of 7 (e.g. 21 or 70) you say 'devil' instead. Looser drinks {sips}.",
+                "explanation": "Start counting at 1. For a number containing 7 (e.g. 7 or 17) and a multiple of 7 (e.g. 21 or 70) you say 'devil' instead. Looser drinks."
+            }
+        }
+    }
+]

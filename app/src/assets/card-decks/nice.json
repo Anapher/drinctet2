@@ -36,17 +36,24 @@
         }
     },
     {
-        "type": "activity",
-        "content": {
-            "de": "{player}, trinke so viele Schlucke, wie Titten im Raum sind."
+        "type": "thisOrThat",
+        "options": {
+            "de": [
+                "Lieber in einem richtigen coolen Schloss leben",
+                "eine eigene Yacht besitzen?"
+            ]
         }
     },
     {
         "type": "thisOrThat",
         "options": {
             "de": [
-                "Lieber in einem richtigen coolen Schloss leben",
-                "eine eigene Yacht besitzen?"
+                "Lieber jetzt jemanden heiraten, den die Eltern für dich aussuchen",
+                "für immer Single bleiben?"
+            ],
+            "en": [
+                "Would you rather marry someone right now that your parents picked out",
+                "be single for the rest of your life?"
             ]
         }
     }
