@@ -20,8 +20,6 @@ export default function selectCard<K extends GameCardData['type']>(
       throw new NoCardFoundError('no cards available');
    }
 
-   console.log(viableCards);
-
    return selectRandomWeighted(viableCards, () => 1)!;
 }
 

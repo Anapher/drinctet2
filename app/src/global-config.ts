@@ -15,6 +15,7 @@ const globalConfig: GlobalConfig = {
       activity: 1,
       fact: 1,
       customNeverHaveIEver: 1,
+      miniGame: 1,
    },
 };
 

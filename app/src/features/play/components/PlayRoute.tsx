@@ -18,6 +18,7 @@ export default function PlayRoute() {
    const gameForm = useGameForm({
       cardDeckIds: Object.keys(cardDecks),
       slideTypeWeights: globalConfig.defaultSlideWeights,
+      alwaysShowEnglishCards: true,
    });
 
    const {

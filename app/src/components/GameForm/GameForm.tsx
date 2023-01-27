@@ -133,11 +133,8 @@ function PlayerList({ control }: PlayerListProps) {
    };
 
    useEffect(() => {
-      console.log('use effect');
-
       if (fields.length === 0) {
          handleAddNewPlayer();
-         console.log('add new');
       }
    }, []);
 

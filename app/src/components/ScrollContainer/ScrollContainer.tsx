@@ -66,8 +66,6 @@ function ScrollContainer<T>({
    const background = useTransform(y, (v) => backgroundColorInterpolatorRef.current(v));
 
    const handleOnDragEnd = async (_: any, info: PanInfo) => {
-      console.log(info.velocity.y);
-      console.log(info.offset.y, containerRef.current?.clientHeight || 600);
       const doIt =
          Math.abs(info.velocity.y) > 500 || Math.abs(info.offset.y) > (containerRef.current?.clientHeight || 600) * 0.1;
 

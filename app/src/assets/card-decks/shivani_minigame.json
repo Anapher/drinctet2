@@ -15,7 +15,7 @@
             "en": {
                 "title": "Fingers up",
                 "shortExplanation": "{player} starts. Looser drinks {sips}.",
-                "explanation": "All players place their right index finger on the same object in the middle. A player begins, and on the count of 3 says a number (no higher than the number of fingers in the middle) out loud. As they say the number, all players can decide to keep or remove their finger from the object in the middle. If the number said, matches the fingers in the middle, the player is save, and the game continues without them. Else they stay in the game. The last player still in the game loses."
+                "explanation": "All players place their right index finger on the same object in the middle. A player begins, and on the count of 3 says a number (no higher than the number of fingers in the middle) out loud. As they say the number, all players can decide to keep or remove their finger from the object in the middle. If the number said matches the fingers in the middle, the player is safe, and the game continues without them. Else they stay in the game. The last player still in the game loses."
             }
         }
     },
@@ -24,8 +24,7 @@
         "content": {
             "en": {
                 "title": "Make the Band",
-                "shortExplanation": "{player} counts down from three. Everyone plays an pretend instrument with sound effects. If there is two players, with the same instrument, they drink {sips}. If everyone is unique, everyone drinks {sips}",
-                "explanation": "{player} counts down from three. Everyone plays an pretend instrument with sound effects. If there is two players, with the same instrument, they drink {sips}. If everyone is unique, everyone drinks {sips}"
+                "shortExplanation": "{player} counts down from three. Everyone plays an pretend instrument with sound effects. If there is two players, with the same instrument, they drink {sips}. If everyone is unique, everyone drinks {sips}"
             }
         }
     },
@@ -44,8 +43,7 @@
         "content": {
             "en": {
                 "title": "First sight",
-                "shortExplanation": "All players look to the ceiling. {player} counts down from 3, and everyone looks down at another player. If you make eye contact, both drink {sips}!",
-                "explanation": "All players look to the ceiling. A player counts down from 3, and everyone looks down at another player. If you make eye contact, both drink!"
+                "shortExplanation": "All players look to the ceiling. {player} counts down from 3, and everyone looks down at another player. If you make eye contact, both drink {sips}!"
             }
         }
     },
@@ -54,8 +52,7 @@
         "content": {
             "en": {
                 "title": "Guess the song",
-                "shortExplanation": "{player1} plays or sings a song. Starting at {player2} everyone guesses the song clockwise. First one to get it wrong or not at all drinks {sips}.",
-                "explanation": "One player plays or sings a song. Starting at another player everyone guesses the song clockwise. First one to get it wrong or not at all drinks."
+                "shortExplanation": "{player1} plays or sings a song. Starting at {player2} everyone guesses the song clockwise. First one to get it wrong or not at all drinks {sips}."
             }
         }
     },
@@ -64,8 +61,7 @@
         "content": {
             "en": {
                 "title": "7 is devil",
-                "shortExplanation": "{player} starts counting at 1. For a number containing 7 (e.g. 7 or 17) and a multiple of 7 (e.g. 21 or 70) you say 'devil' instead. Looser drinks {sips}.",
-                "explanation": "Start counting at 1. For a number containing 7 (e.g. 7 or 17) and a multiple of 7 (e.g. 21 or 70) you say 'devil' instead. Looser drinks."
+                "shortExplanation": "{player} starts counting at 1. For a number containing 7 (e.g. 7 or 17) and a multiple of 7 (e.g. 21 or 70) you say 'devil' instead. Looser drinks {sips}."
             }
         }
     }

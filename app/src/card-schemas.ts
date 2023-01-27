@@ -56,7 +56,7 @@ export const miniGameCardSchema = z.object({
       z.object({
          title: z.string(),
          shortExplanation: z.string(),
-         explanation: z.string(),
+         explanation: z.string().optional(),
       }),
    ),
 });

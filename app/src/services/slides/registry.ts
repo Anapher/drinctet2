@@ -7,6 +7,7 @@ import thisOrThat from './thisOrThat';
 import activity from './activity';
 import fact from './fact';
 import customNeverHaveIEver from './customNeverHaveIEver';
+import miniGame from './miniGame';
 
 const slideFactories = {
    customTruthOrDare,
@@ -18,6 +19,7 @@ const slideFactories = {
    activity,
    fact,
    customNeverHaveIEver,
+   miniGame,
 };
 
 export type SlideType = keyof typeof slideFactories;
