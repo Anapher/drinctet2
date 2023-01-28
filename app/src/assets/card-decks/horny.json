@@ -496,5 +496,17 @@
         "question": {
             "de": "Wer hat am ehsten Sex in den nächsten 24 Stunden?"
         }
+    },
+    {
+        "type": "mostLikely",
+        "question": {
+            "de": "Wer war am jüngsten beim ersten Mal?"
+        }
+    },
+    {
+        "type": "truth",
+        "truth": {
+            "de": "Hast du schon einmal eine Person des anderen Geschlechts oral befriedigt?"
+        }
     }
 ]

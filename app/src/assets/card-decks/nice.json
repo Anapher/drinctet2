@@ -56,5 +56,173 @@
                 "be single for the rest of your life?"
             ]
         }
+    },
+    {
+        "type": "thisOrThat",
+        "options": {
+            "de": [
+                "7 Minuten sich vom gleichen Geschlecht oral befriedigen lassen",
+                "10 Minuten wild herumknutschen mit Zunge"
+            ]
+        }
+    },
+    {
+        "type": "activity",
+        "content": {
+            "de": "{player}, kipp ein bisschen aus deinem Glas in jedes der anderen Gläser"
+        }
+    },
+    {
+        "type": "activity",
+        "content": {
+            "de": "Alle kippen ein bisschen aus ihrem Glas in das von {player}"
+        }
+    },
+    {
+        "type": "activity",
+        "content": {
+            "de": "{player}, nimm die Gläser deiner Nachbarn und gib ihnen {sips} zu trinken"
+        }
+    },
+    {
+        "type": "thisOrThat",
+        "options": {
+            "de": [
+                "Für eine Brustvergrößerung",
+                "dagegegen"
+            ]
+        }
+    },
+    {
+        "type": "neverHaveIEver",
+        "statement": {
+            "de": "mit einer anderen Person gemeinsam einen Porno geschaut."
+        }
+    },
+    {
+        "type": "neverHaveIEver",
+        "statement": {
+            "de": "einen Pilz am Fuß (oder sonst wo...) gehabt"
+        }
+    },
+    {
+        "type": "activity",
+        "content": {
+            "de": "Die Person, die zuerst das Geburtsjahr von Jesus nennt, verteilt {sips}"
+        }
+    },
+    {
+        "type": "activity",
+        "content": {
+            "de": "{player} trinkt {sips} falschherum (die Hände auf dem Boden, die Beine in der Luft). {player2} und {player3} helfen dir, das Gleichgewicht zu halten"
+        }
+    },
+    {
+        "type": "activity",
+        "content": {
+            "de": "{player} und {player2} liefern sich einen Liegestütz-Wettbewerb, der Verlierer trinkt {sips}."
+        }
+    },
+    {
+        "type": "activity",
+        "content": {
+            "de": "{player} trinkt {sips}, ohne mit den Lippen das Glas zu berühren"
+        }
+    },
+    {
+        "type": "activity",
+        "content": {
+            "de": "Ex-Duell zwischen {player} und {player2}, Derjenige, der zuerst fertig ist, ist 8 Minuten lang immun"
+        }
+    },
+    {
+        "type": "activity",
+        "content": {
+            "de": "{player}, du hast die Wahl, entweder du gibst harten Alkohol in dein Glas oder du trinkst {sips}"
+        }
+    },
+    {
+        "type": "activity",
+        "content": {
+            "de": "{player}, wenn du {sips} trinkst, trinken {player2} und {player3} das doppelte"
+        }
+    },
+    {
+        "type": "activity",
+        "content": {
+            "de": "Der nächste Spieler, der trinken muss, muss [zwei|drei] Mal so viele Schlucke trinken, wie angegeben"
+        }
+    },
+    {
+        "type": "activity",
+        "content": {
+            "de": "{player}, wenn du 15 Liegestützen machst, dann trinkt {player2} {sips}"
+        }
+    },
+    {
+        "type": "activity",
+        "content": {
+            "de": "{player}, trink {sips}, indem du den Arm, der dein Glas hält, unter einem deiner Beine durchstreckst"
+        }
+    },
+    {
+        "type": "activity",
+        "content": {
+            "de": "{player}, {player2} zählt bis 50. Wenn du es nicht schaffst, in der Zeit dich 10 Mal um dich selbst zu drehen, trinkst du dein Glas aus."
+        }
+    },
+    {
+        "type": "activity",
+        "content": {
+            "de": "{player}, wenn du schon einmal jemanden eins auf die Fresse gegeben hast, trink {sips}"
+        }
+    },
+    {
+        "type": "activity",
+        "content": {
+            "de": "{player}, wenn dir schon einmal jemand auf die Schnauze gehaun hat, verteil {sips}"
+        }
+    },
+    {
+        "type": "activity",
+        "content": {
+            "de": "Alle, die einen Bart haben, trinken {sips}!"
+        }
+    },
+    {
+        "type": "activity",
+        "content": {
+            "de": "Alle, deren Glas weniger als halb voll ist, trinken auf ex!"
+        }
+    },
+    {
+        "type": "activity",
+        "content": {
+            "de": "Alle, die schnarchen, trinken {sips} und machen dabei Schnarchgeräusche"
+        }
+    },
+    {
+        "type": "activity",
+        "content": {
+            "de": "Trink {sips}, wenn man meinen könnte, dass du aus einem anderen Land kommst, das aber nicht der Fall ist"
+        }
+    },
+    {
+        "type": "activity",
+        "content": {
+            "de": "Trink {sips}, wenn man meinen könnte, dass du besoffen bist"
+        }
+    },
+    {
+        "type": "activity",
+        "content": {
+            "de": "Alle, die weniger als 57kg wiegen, trinken auf Ex, wählt eine Person, die mit euch anstößt und {sips} trinkt"
+        }
+    },
+    {
+        "type": "activity",
+        "content": {
+            "de": "Trink {sips}, wenn du dieses Jahr mit mehr als einer Person geschlafen hast"
+        }
     }
 ]
