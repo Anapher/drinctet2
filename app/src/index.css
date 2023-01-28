@@ -1,0 +1,14 @@
+body {
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+  display: flex;
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
+#root {
+  flex: 1
+}

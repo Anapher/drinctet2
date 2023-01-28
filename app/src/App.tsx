@@ -1,11 +1,11 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { persistor, store } from './app/store';
 import { Provider, useSelector } from 'react-redux';
-import GameRoute from './features/game/components/GameRoute';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
-import PlayRoute from './features/play/components/PlayRoute';
-import { selectIsGameActive } from './features/game/selectors';
+import { persistor, store } from './app/store';
+import GameRoute from './features/game/components/GameRoute';
 import GameSettingsRoute from './features/game/components/GameSettingsRoute';
+import { selectIsGameActive } from './features/game/selectors';
+import PlayRoute from './features/play/components/PlayRoute';
 
 function AppRoutes() {
    const gameActive = useSelector(selectIsGameActive);
