@@ -38,7 +38,7 @@
     {
         "type": "mostLikely",
         "question": {
-            "en": "Who is most likely to not know the {meme|latest news|song|tiktok song}?"
+            "en": "Who is most likely to not know the [meme|latest news|song|tiktok song]?"
         }
     },
     {
@@ -68,13 +68,13 @@
     {
         "type": "mostLikely",
         "question": {
-            "en": "Who is most likely to forget to mute their microphone in a {teams|zoom} call?"
+            "en": "Who is most likely to forget to mute their microphone in a [teams|zoom] call?"
         }
     },
     {
         "type": "mostLikely",
         "question": {
-            "en": "Who is most likely to allergic to {cashews|gluten|lactose|strawberries|almonds|eggs}?"
+            "en": "Who is most likely to allergic to [cashews|gluten|lactose|strawberries|almonds|eggs]?"
         }
     },
     {
@@ -140,13 +140,13 @@
     {
         "type": "mostLikely",
         "question": {
-            "en": "Who is most likely to sleep on the {bus|train} and miss their stop?"
+            "en": "Who is most likely to sleep on the [bus|train] and miss their stop?"
         }
     },
     {
         "type": "mostLikely",
         "question": {
-            "en": "Who is most likely to cook the {best|worst} meal you ever had?"
+            "en": "Who is most likely to cook the [best|worst] meal you ever had?"
         }
     },
     {
@@ -188,7 +188,7 @@
     {
         "type": "mostLikely",
         "question": {
-            "en": "Who is most likely to marry someone they met on {tinder|bumble}?"
+            "en": "Who is most likely to marry someone they met on [tinder|bumble]?"
         }
     },
     {
@@ -200,7 +200,7 @@
     {
         "type": "mostLikely",
         "question": {
-            "en": "Who is most likely to become a {milf|dilf}?"
+            "en": "Who is most likely to become a [milf|dilf]?"
         }
     },
     {

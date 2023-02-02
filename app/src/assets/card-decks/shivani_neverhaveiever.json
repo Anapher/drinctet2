@@ -74,7 +74,7 @@
     {
         "type": "neverHaveIEver",
         "statement": {
-            "en": "spent more than {10|50|30|20} euros on underwear"
+            "en": "spent more than [10|50|30|20] euros on underwear"
         }
     },
     {
